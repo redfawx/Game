@@ -63,7 +63,7 @@ module.exports = {
       // exclude Phaser image assets from url-loader
       config.module.rules.forEach((rule) => {
         if (rule.test.toString().includes('png')) {
-          rule.exclude = /phaser/
+          rule.exclude = /game/
         }
       })
       // load Phaser image assets
@@ -71,7 +71,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
         loader: 'file-loader',
         options: {
-          include: /phaser/,
+          include: /game/,
           name: '[path][name].[ext]'
         }
       })
