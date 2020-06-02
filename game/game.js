@@ -3,20 +3,14 @@ import BootScene from './scenes/BootScene'
 import PlayScene from './scenes/PlayScene'
 
 function launch(containerId) {
-  return new Phaser.Game({
+  const config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
-    parent: containerId,
-    physics: {
-      default: 'arcade',
-      arcade: {
-        gravity: { y: 300 },
-        debug: true
-      }
-    },
+    width: window.innerWidth,
+    height: window.innerHeight,
     scene: [BootScene, PlayScene]
-  })
+  }
+
+  return new Phaser.Game(config)
 }
 
 export default launch
